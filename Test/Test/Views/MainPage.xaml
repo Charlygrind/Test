@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Views.MainPage"
+              BindingContext="{Binding MainPageViewModel, Source={StaticResource Locator}}"
+             Visual="Material">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Suscribase ahora!" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" FontSize="36"/>
+                </Frame>
+                <Label Text="Suscribase hoy y recibira las noticias mas recientes!" FontSize="Title" Padding="30,10,30,10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                <Label Text="Basico" FontSize="Small" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Label Text="$250.00" FontSize="Small" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Label Text="Premium" FontSize="Medium" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Label Text="$500.00" FontSize="Medium" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Label Text="Gold" FontAttributes="Bold" FontSize="Large" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Label Text="$750.00" FontSize="Large" FontAttributes="Bold" Padding="30,10,30,10" HorizontalOptions="Center"/>
+                <Button BackgroundColor="#2196F3" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Suscribirme" Command="{Binding SuscribeCommand}" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

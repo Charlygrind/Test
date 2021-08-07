@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:Test.ViewModels.Base;assembly=Test"
+             x:Class="Test.App">
+    <Application.Resources>
+        <!--Application resource dictionary-->
+        <ResourceDictionary>
+            <vm:LocatorViewModel x:Key="Locator" />
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#3897f0"></Setter>
+                <Setter Property="BarTextColor" Value="White"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

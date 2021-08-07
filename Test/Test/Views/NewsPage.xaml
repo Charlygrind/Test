@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
+             mc:Ignorable="d"
+             x:Class="Test.Views.NewsPage"
+             BindingContext="{Binding NewsPageViewModel, Source={StaticResource Locator}}"
+             Title="News"
+             Visual="Material">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="Cambiar suscripcion" Command="{Binding NavigateCommand}" CommandParameter="EditSubPage"  
+            Order="Secondary">
+        </ToolbarItem>
+        <ToolbarItem
+            Text="Anular Suscripcion" Command="{Binding NavigateCommand}" CommandParameter="AnularPage"
+            Order="Secondary">
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding Refreshing}">
+            <ScrollView>
+                <StackLayout Padding="10">
+                    <Label Text="Bienvenido!" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="Title"/>
+                    <Label Text="Suscriptor: "/>
+                    <Label Text="{Binding Nombre}" TextColor="Black" FontSize="Title"/>
+                    <Label Text="Suscripcion: "/>
+                    <Label Text="{Binding TipoSuscripcion}" TextColor="Black" FontSize="Title"/>
+                    <Label Text="Su ubicacion" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+                    <googleMaps:Map HeightRequest="200" WidthRequest="500" HorizontalOptions="Center" VerticalOptions="Start">
+                        <googleMaps:Map.Behaviors>
+                            <bindings:MoveToRegionBehavior Request="{Binding Request}"/>
+                            <bindings:BindingPinsBehavior Value="{Binding Pins}"/>
+                        </googleMaps:Map.Behaviors>
+                    </googleMaps:Map>
+                    <Picker Title="Seleccione categoria"
+                    ItemsSource="{Binding Categories}"
+                    ItemDisplayBinding="{Binding Descripcion}"
+                    SelectedItem="{Binding SelectedCategory,Mode=TwoWay}"/>
+                    <CarouselView ItemsSource="{Binding NewsList}" HeightRequest="300">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BorderColor="Black" HasShadow="True" CornerRadius="10" BackgroundColor="WhiteSmoke" Margin="20" HeightRequest="290">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding image_url}" HeightRequest="200" WidthRequest="200" Grid.RowSpan="2" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" MaxLines="1" LineBreakMode="CharacterWrap"/>
+                                            <Label Text="{Binding description}" FontSize="Body" Grid.Row="1" Grid.Column="1" MaxLines="4" LineBreakMode="CharacterWrap"/>
+                                            <Label Text="{Binding source_id}" FontAttributes="Italic" FontSize="Caption" Grid.Row="2" Grid.Column="1"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <Entry Placeholder="Pagina" Text="{Binding CurrentPage}" IsReadOnly="True" HorizontalOptions="Center"/>
+                    <Stepper Maximum="100" Increment="1" Value="{Binding CurrentPage}"/>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

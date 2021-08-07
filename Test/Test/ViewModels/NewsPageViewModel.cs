@@ -239,17 +239,20 @@ namespace Test.ViewModels
                 NewsList = new ObservableCollection<News>();
                 foreach (var _New in News.Data)
                 {
-                    News temp = new News()
+                    if(_New.content != null)
                     {
-                        title = _New.title ?? "",
-                        link = _New.link ?? "",
-                        description = _New.description ?? "",
-                        content = _New.content ?? "",
-                        pubDate = _New.pubDate ?? "",
-                        image_url = _New.image_url ?? "https://previews.123rf.com/images/pe3check/pe3check1710/pe3check171000054/88673746-nenhuma-imagem-dispon%C3%ADvel-sinal-%C3%ADcone-da-web-da-internet-para-indicar-a-aus%C3%AAncia-de-imagem-at%C3%A9-que-e.jpg",
-                        source_id = _New.source_id ?? ""
-                    };
-                    NewsList.Add(temp);
+                        News temp = new News()
+                        {
+                            title = _New.title ?? "",
+                            link = _New.link ?? "",
+                            description = _New.description ?? "",
+                            content = _New.content ?? "",
+                            pubDate = _New.pubDate ?? "",
+                            image_url = _New.image_url ?? "https://previews.123rf.com/images/pe3check/pe3check1710/pe3check171000054/88673746-nenhuma-imagem-dispon%C3%ADvel-sinal-%C3%ADcone-da-web-da-internet-para-indicar-a-aus%C3%AAncia-de-imagem-at%C3%A9-que-e.jpg",
+                            source_id = _New.source_id ?? ""
+                        };
+                        NewsList.Add(temp);
+                    }
                 }
                 Refreshing = false;
             }

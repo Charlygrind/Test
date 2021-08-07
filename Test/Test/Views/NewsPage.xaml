@@ -57,9 +57,9 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Image Source="{Binding image_url}" HeightRequest="200" WidthRequest="200" Grid.RowSpan="2" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                            <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" MaxLines="1" LineBreakMode="CharacterWrap"/>
-                                            <Label Text="{Binding description}" FontSize="Body" Grid.Row="1" Grid.Column="1" MaxLines="4" LineBreakMode="CharacterWrap"/>
-                                            <Label Text="{Binding source_id}" FontAttributes="Italic" FontSize="Caption" Grid.Row="2" Grid.Column="1"/>
+                                            <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Title" Grid.Row="0" Grid.ColumnSpan="2" MaxLines="2" LineBreakMode="CharacterWrap"/>
+                                            <Label Text="{Binding content}" FontSize="Body" Grid.Row="1" Grid.Column="1" MaxLines="6" LineBreakMode="CharacterWrap"/>
+                                            <Label Text="{Binding source_id}" FontAttributes="Italic" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
                                         </Grid>
                                     </StackLayout>
                                 </Frame>

@@ -26,7 +26,7 @@ namespace Test.Views {
         private global::Xamarin.Forms.Label Suscripcion_CelularError;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label Suscripcion_EmailError;
+        private global::Xamarin.Forms.Label Suscripcion_CorreoError;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -34,7 +34,7 @@ namespace Test.Views {
             Suscripcion_NombreError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Suscripcion_NombreError");
             Suscripcion_ApellidoError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Suscripcion_ApellidoError");
             Suscripcion_CelularError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Suscripcion_CelularError");
-            Suscripcion_EmailError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Suscripcion_EmailError");
+            Suscripcion_CorreoError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Suscripcion_CorreoError");
         }
     }
 }

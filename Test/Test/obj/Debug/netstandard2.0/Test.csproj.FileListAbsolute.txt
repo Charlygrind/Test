@@ -34,3 +34,4 @@ D:\Projects\Test\Test\Test\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Projects\Test\Test\Test\obj\Debug\netstandard2.0\Test.dll
 D:\Projects\Test\Test\Test\obj\Debug\netstandard2.0\ref\Test.dll
 D:\Projects\Test\Test\Test\obj\Debug\netstandard2.0\Test.pdb
+D:\Projects\Test\Test\Test\obj\Debug\netstandard2.0\Views\SubDetailPage.xaml.g.cs

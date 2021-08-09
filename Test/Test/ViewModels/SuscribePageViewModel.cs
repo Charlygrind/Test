@@ -18,12 +18,14 @@ namespace Test.ViewModels
         private readonly ISqliteServiceCRUD<Suscripcion> _sqliteSuscripcionService;
         public ICommand SuscripcionCommand { get; set; }
         public ICommand SaveCommand { get; set; }
+        public ICommand DetailCommand { get; set; }
         public SuscribePageViewModel(INavigationService navigationService, ISqliteServiceCRUD<Suscripcion> sqliteSuscripcionService)
         {
             this._navigationService = navigationService;
             this._sqliteSuscripcionService = sqliteSuscripcionService;
             this.SuscripcionCommand = new Command<string>(async (Param) => await Suscripcion(Param));
             this.SaveCommand = new Command(async () => await Save());
+            this.DetailCommand = new Command(async () => await Detail());
         }
         private Suscripcion _subscripcionModel = new Suscripcion();
         public string Nombre
@@ -221,6 +223,10 @@ namespace Test.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Alerta!", "Ocurrio algo Error(" + line + ")", "OK");
             }
             _clickedButton = false;
+        }
+        private async Task Detail()
+        {
+            await _navigationService.PushModalAsync(new SubDetailPage());
         }
         public override async void OnAppearing(object navigationContext)
         {

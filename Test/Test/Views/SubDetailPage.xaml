@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Views.SubDetailPage" BindingContext="{Binding SubDetailPageViewModel, Source={StaticResource Locator}}"
+             Title="News"
+             Visual="Material">
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="White">
+            <Grid BackgroundColor="White" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Detalles de la suscripcion" 
+                       FontSize="Title" 
+                       Grid.Row="0" 
+                       Grid.Column="1" 
+                       HorizontalOptions="End"/>
+                <Image Source="https://pics.freeicons.io/uploads/icons/png/19187836491541068764-512.png" 
+                       WidthRequest="20" 
+                       HeightRequest="20" 
+                       HorizontalOptions="End" 
+                       Grid.Row="0" 
+                       Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Frame>
+                <Label Text="Noticias mas recientes de diversos temas"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

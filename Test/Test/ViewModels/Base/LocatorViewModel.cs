@@ -29,6 +29,7 @@ namespace Test.ViewModels.Base
             builder.RegisterType<NewsPageViewModel>();
             builder.RegisterType<EditSubPageViewModel>();
             builder.RegisterType<AnularPageViewModel>();
+            builder.RegisterType<SubDetailPageViewModel>();
             
             // Services    
             // Navigation
@@ -70,6 +71,10 @@ namespace Test.ViewModels.Base
         public AnularPageViewModel AnularPageViewModel
         {
             get { return _container.Resolve<AnularPageViewModel>(); }
+        }
+        public SubDetailPageViewModel SubDetailPageViewModel
+        {
+            get { return _container.Resolve<SubDetailPageViewModel>(); }
         }
     }
 }

@@ -22,19 +22,20 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Text="Cambiar Suscripcion" TextColor="Black" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
                     <Entry Placeholder="Nombre" Grid.Column="0" Grid.Row="1" Text="{Binding Nombre, Mode=TwoWay}"/>
-                    <Label x:Name="Suscripcion_NombreError" IsVisible="False" TextColor="Red"/>
+                    <Label x:Name="Suscripcion_NombreError" IsVisible="False" TextColor="Red" BackgroundColor="WhiteSmoke" Grid.Row="10"/>
                     <Entry Placeholder="Apellido" Grid.Column="0" Grid.Row="2" Text="{Binding Apellido, Mode=TwoWay}"/>
-                    <Label x:Name="Suscripcion_ApellidoError" IsVisible="False" TextColor="Red"/>
+                    <Label x:Name="Suscripcion_ApellidoError" IsVisible="False" TextColor="Red" BackgroundColor="WhiteSmoke" Grid.Row="10"/>
                     <Entry Placeholder="Celular" Grid.Column="0" Grid.Row="3" Keyboard="Numeric" Text="{Binding Celular, Mode=TwoWay}" MaxLength="10" />
-                    <Label x:Name="Suscripcion_CelularError" IsVisible="False" TextColor="Red"/>
+                    <Label x:Name="Suscripcion_CelularError" IsVisible="False" TextColor="Red" BackgroundColor="WhiteSmoke" Grid.Row="10"/>
                     <Entry Placeholder="Email" Grid.Column="0" Grid.Row="4" Keyboard="Email" Text="{Binding Correo, Mode=TwoWay}"/>
-                    <Label x:Name="Suscripcion_EmailError" IsVisible="False" TextColor="Red"/>
+                    <Label x:Name="Suscripcion_CorreoError" IsVisible="False" TextColor="Red" BackgroundColor="WhiteSmoke" Grid.Row="10"/>
                     <Frame Grid.Column="0" Grid.Row="5" BackgroundColor="LightGray" InputTransparent="True ">
                         <StackLayout>
                             <Grid>
@@ -58,7 +59,7 @@
                                     </Switch.Behaviors>
                                 </Switch>
                                 <Label Text="Basic" TextColor="Black" FontSize="Small" Grid.Row="1" Grid.Column="1" Padding="0,10,0,0"/>
-                                <ImageButton  Grid.Row="1" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="10"/>
+                                <ImageButton  Grid.Row="1" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="10" Command="{Binding DetailCommand}"/>
 
                                 <Switch  Grid.Row="2" Grid.Column="0" IsToggled="{Binding Premium, Mode=OneWay}">
                                     <Switch.Behaviors>
@@ -66,7 +67,7 @@
                                     </Switch.Behaviors>
                                 </Switch>
                                 <Label Text="Premium" FontSize="Medium" TextColor="Black"  Grid.Row="2" Grid.Column="1" Padding="0,10,0,0"/>
-                                <ImageButton  Grid.Row="2" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="30"/>
+                                <ImageButton  Grid.Row="2" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="30" Command="{Binding DetailCommand}"/>
 
                                 <Switch  Grid.Row="3" Grid.Column="0" IsToggled="{Binding Gold, Mode=OneWay}">
                                     <Switch.Behaviors>
@@ -74,14 +75,14 @@
                                     </Switch.Behaviors>
                                 </Switch>
                                 <Label Text="Gold" FontSize="Large" TextColor="Black" FontAttributes="Bold"  Grid.Row="3" Grid.Column="1" Padding="0,10,0,0"/>
-                                <ImageButton  Grid.Row="3" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="40"/>
+                                <ImageButton  Grid.Row="3" Grid.Column="2" Source="https://pics.freeicons.io/uploads/icons/png/8593049241537355864-512.png" WidthRequest="40" Command="{Binding DetailCommand}"/>
                             </Grid>
                         </StackLayout>
                     </Frame>
                     <Entry Placeholder="Total" Grid.Column="0" Grid.Row="7" IsReadOnly="True" Text="{Binding TipoSuscripcion,Mode=TwoWay}"/>
                     <Label Text="Recibir noticias al correo" Grid.Column="0" Grid.Row="8" FontAttributes="Italic" TextColor="Black"/>
                     <CheckBox  Grid.Column="0" Grid.Row="9" HorizontalOptions="Start" IsChecked="{Binding RecibirEmail}"/>
-                    <Button Text="Cambiar Suscripcion" Grid.Column="0" Grid.Row="10" Command="{Binding SaveCommand}"/>
+                    <Button Text="Cambiar Suscripcion" Grid.Column="0" Grid.Row="11" Command="{Binding SaveCommand}"/>
                 </Grid>
             </ScrollView>
         </StackLayout>
